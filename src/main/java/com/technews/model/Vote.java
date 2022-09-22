@@ -58,7 +58,7 @@ public class Vote implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Vote) return false;
+        if (!(o instanceof Vote)) return false;
         Vote vote = (Vote) o;
         return Objects.equals(getId(), vote.getId()) &&
                 Objects.equals(getUserId(), vote.getUserId()) &&
