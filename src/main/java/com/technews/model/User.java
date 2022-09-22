@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 // following 3 are class-level annotations
@@ -38,6 +39,10 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Comment> comments;
+
+    public User(){
+
+    }
 
     public User(Integer id, String username, String email, String password) {
         this.id = id;
@@ -129,4 +134,20 @@ public class User implements Serializable {
     public int hashCode() {
         return Objects.hash(id, username, email, password, loggedIn, posts, votes, comments);
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", loggedIn=" + loggedIn +
+                ", posts=" + posts +
+                ", votes=" + votes +
+                ", comments=" + comments +
+                '}';
+    }
+
+
 }
