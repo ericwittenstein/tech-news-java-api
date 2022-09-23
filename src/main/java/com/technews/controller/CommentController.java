@@ -1,4 +1,4 @@
-package controller;
+package com.technews.controller;
 
 import com.technews.model.Comment;
 import com.technews.repository.CommentRepository;
