@@ -5,6 +5,8 @@
 
 This is a basic tutorial project using Java and a number of related tools/plugins to generate a small blog application, deployed through Heroku with a MySQL database
 
+The deployed application can be found [HERE](https://javatechblog.herokuapp.com/)
+
 ## Table of Contents 
 
 * [Installation](#installation)
