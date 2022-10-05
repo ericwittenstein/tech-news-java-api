@@ -32,7 +32,7 @@ public class HomePageController {
 
     // login endpoint, allowing users to login by calling login.html template when using /login route
     @GetMapping("/login")
-    public String login(Model model, HttpServletRequest request){
+    public String login(Model model, HttpServletRequest request) {
         if (request.getSession(false) != null) {
             return "redirect:/";
         }
@@ -43,8 +43,8 @@ public class HomePageController {
 
     // logout route
     @GetMapping("/users/logout")
-    public String logout(HttpServletRequest request){
-        if (request.getSession(false) != null){
+    public String logout(HttpServletRequest request) {
+        if (request.getSession(false) != null) {
             request.getSession().invalidate();
         }
         return "redirect:/login";
@@ -57,8 +57,8 @@ public class HomePageController {
 
         // make sure user is logged in
         if (request.getSession(false) != null) {
-           sessionUser = (User) request.getSession().getAttribute("SESSION_USER");
-           model.addAttribute("loggedIn", sessionUser.isLoggedIn());
+            sessionUser = (User) request.getSession().getAttribute("SESSION_USER");
+            model.addAttribute("loggedIn", sessionUser.isLoggedIn());
         } else {
             model.addAttribute("loggedIn", false);
         }
@@ -86,7 +86,7 @@ public class HomePageController {
     @GetMapping("/dashboard")
     public String dashboardPageSetup(Model model, HttpServletRequest request) throws Exception {
         if (request.getSession(false) != null) {
-            setupDashboardPage(model,request);
+            setupDashboardPage(model, request);
             return "dashboard";
         } else {
             model.addAttribute("user", new User());
@@ -97,14 +97,14 @@ public class HomePageController {
     // handler for no title and link
     @GetMapping("/dashboardEmptyTitleAndLink")
     public String dashboardEmptyTitleAndLinkHandler(Model model, HttpServletRequest request) throws Exception {
-        setupDashboardPage(model,request);
+        setupDashboardPage(model, request);
         model.addAttribute("notice", "To create a post the Title and Link must be populated!");
         return "dashboard";
     }
 
     // handler for empty comment
     @GetMapping("/singlePostEmptyComment/{id}")
-    public String singlePostEmptyCommentHandler(@PathVariable int id, Model model, HttpServletRequest request){
+    public String singlePostEmptyCommentHandler(@PathVariable int id, Model model, HttpServletRequest request) {
         setupSinglePostPage(id, model, request);
         model.addAttribute("notice", "To add a comment you must enter the comment in the comment text area!");
         return "single-post";
@@ -112,15 +112,15 @@ public class HomePageController {
 
     // single post route
     @GetMapping("/post/{id}")
-    public String singlePostPageSetup(@PathVariable int id, Model model, HttpServletRequest request){
+    public String singlePostPageSetup(@PathVariable int id, Model model, HttpServletRequest request) {
         setupSinglePostPage(id, model, request);
         return "single-post";
     }
 
     // handler for empty comment in edit page
     @GetMapping("/editPostEmptyComment/{id}")
-    public String editPostEmptyCommentHandler(@PathVariable int id, Model model, HttpServletRequest request){
-        if (request.getSession(false) != null){
+    public String editPostEmptyCommentHandler(@PathVariable int id, Model model, HttpServletRequest request) {
+        if (request.getSession(false) != null) {
             setupEditPostPage(id, model, request);
             model.addAttribute("notice", "To add a comment you must enter the comment in the comment text area!");
             return "edit-post";
@@ -132,8 +132,8 @@ public class HomePageController {
 
     // edit post page route
     @GetMapping("/dashboard/edit/{id}")
-    public String editPostPageSetup(@PathVariable int id, Model model, HttpServletRequest request){
-        if (request.getSession(false) != null){
+    public String editPostPageSetup(@PathVariable int id, Model model, HttpServletRequest request) {
+        if (request.getSession(false) != null) {
             setupEditPostPage(id, model, request);
             return "edit-post";
         } else {
@@ -149,7 +149,7 @@ public class HomePageController {
         Integer userId = sessionUser.getId();
 
         List<Post> postList = postRepository.findAllPostsByUserId(userId);
-        for (Post p : postList){
+        for (Post p : postList) {
             p.setVoteCount(voteRepository.countVotesByPostId(p.getId()));
             User user = userRepository.getReferenceById(p.getUserId());
             p.setUserName(user.getUsername());
@@ -164,8 +164,8 @@ public class HomePageController {
     }
 
     // single post page
-    public Model setupSinglePostPage(int id, Model model, HttpServletRequest request){
-        if (request.getSession(false) != null){
+    public Model setupSinglePostPage(int id, Model model, HttpServletRequest request) {
+        if (request.getSession(false) != null) {
             User sessionUser = (User) request.getSession().getAttribute("SESSION_USER");
             model.addAttribute("sessionUser", sessionUser);
             model.addAttribute("loggedIn", sessionUser.isLoggedIn());
@@ -187,8 +187,8 @@ public class HomePageController {
     }
 
     // edit post page
-    public Model setupEditPostPage(int id, Model model, HttpServletRequest request){
-        if (request.getSession(false) != null){
+    public Model setupEditPostPage(int id, Model model, HttpServletRequest request) {
+        if (request.getSession(false) != null) {
             User sessionUser = (User) request.getSession().getAttribute("SESSION_USER");
 
             Post returnPost = postRepository.getReferenceById(id);
