@@ -188,5 +188,3 @@ public class TechNewsController {
         }
     }
 }
-
-// lesson 6 testing stage
