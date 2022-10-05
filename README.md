@@ -15,11 +15,13 @@ The deployed application can be found [HERE](https://javatechblog.herokuapp.com/
 
 * [License](#license)
 
+* [Repo](#GitHub Repo)
+
 * [Contributing](#contributing)
 
 * [Testing](#testing)
 
-* [Questions](#questions)
+* [Questions](#Questions and Contact Info)
 
 ## Installation
 
@@ -43,7 +45,7 @@ This project is licensed under the MIT license. Learn more [HERE](LICENSE)
 
 ## GitHub Repo
 
-    **_ THIS IS A PLACEHOLDER FOR A GITHUB REPO _**
+[GitHub Repo Located Here](https://github.com/ericwittenstein/tech-news-java-api-2)
 
 ## Project Demo
 
@@ -55,11 +57,7 @@ Not accepting contributions for this project at this time
 
 ## Testing
 
-To initiate the unit tests for this project, run the following command in the console/command line: 
-
-```
-N/A
-```
+There are no testing scripts for this project.
 
 ## Questions and Contact Info
 
