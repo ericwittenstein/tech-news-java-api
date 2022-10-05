@@ -15,29 +15,21 @@ The deployed application can be found [HERE](https://javatechblog.herokuapp.com/
 
 * [License](#license)
 
-* [Repo](#GitHub Repo)
+* [Repo](#github-repo)
 
 * [Contributing](#contributing)
 
 * [Testing](#testing)
 
-* [Questions](#Questions and Contact Info)
+* [Questions](#questions-and-contact-info)
 
 ## Installation
 
-To install necessary dependencies, run the following command in the console/command line:
-
-```
 There are no external dependencies for this project, it is self-contained
-```
 
 ## Usage
 
-To begin running the program, run the following command in the console/command line:
-
-```
 Using any Java IDE, this program should be compiled, built, and then run
-```
 
 ## License
 
@@ -46,10 +38,6 @@ This project is licensed under the MIT license. Learn more [HERE](LICENSE)
 ## GitHub Repo
 
 [GitHub Repo Located Here](https://github.com/ericwittenstein/tech-news-java-api-2)
-
-## Project Demo
-
-    **_ THIS IS A PLACEHOLDER FOR AN IMAGE OR SCREEN RECORDING OF THE PROJECT _**
 
 ## Contributing
 
